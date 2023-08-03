@@ -1,0 +1,70 @@
+# 1. Print "Hello, World!"
+print("Hello, World!")
+
+# 2. Variables and basic arithmetic
+x = 10
+y = 5
+z = x + y
+print(z)
+
+# 3. Conditional statements
+if z > 15:
+    print("Greater than 15")
+elif z == 15:
+    print("Equals 15")
+else:
+    print("Less than 15")
+
+# 4. Loops
+for i in range(5):
+    print(i)
+
+# 5. Functions
+def square(num):
+    return num**2
+
+print(square(3))
+
+# 6. Lists and list comprehensions
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = [square(num) for num in numbers]
+print(squared_numbers)
+
+# 7. Dictionaries
+person = {"name": "John", "age": 30, "city": "New York"}
+print(person["name"])
+
+# 8. Classes and objects
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+
+dog1 = Dog("Buddy", 2)
+print(dog1.name)
+dog1.bark()
+
+# 9. File handling
+with open("sample.txt", "w") as file:
+    file.write("Hello, this is a sample text.")
+
+with open("sample.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# 10. Try-except for error handling
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Division by zero is not allowed!")
+
+# 11. Lambda functions
+multiply = lambda x, y: x * y
+print(multiply(2, 3))
+
+# 12. Modules and imports
+import math
+print(math.sqrt(16))
