@@ -15,3 +15,21 @@ Copy code
         - package1
         - package2
         - package3
+
+2. Configuring a User:
+This playbook creates a user and adds SSH keys for login.
+
+yaml
+Copy code
+---
+- name: Configure user
+  hosts: target_host
+  tasks:
+    - name: Create user
+      user:
+        name: username
+        state: present
+    - name: Add SSH key
+      authorized_key:
+        user: username
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
