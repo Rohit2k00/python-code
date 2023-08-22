@@ -33,3 +33,22 @@ Copy code
       authorized_key:
         user: username
         key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+
+3. Setting Up a Basic Web Server:
+This playbook sets up a basic web server using Nginx.
+
+yaml
+Copy code
+---
+- name: Set up web server
+  hosts: target_host
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
