@@ -1,0 +1,17 @@
+1. Installing Packages:
+This playbook installs a list of packages on the target system.
+
+yaml
+Copy code
+---
+- name: Install packages
+  hosts: target_host
+  tasks:
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - package1
+        - package2
+        - package3
